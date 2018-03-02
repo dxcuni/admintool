@@ -405,7 +405,7 @@ function genPageConfi(urlObject) {
     var strRowIndex = urlObject.parentNode.parentNode.rowIndex;
     var strValue = $("#textBoxPage" + strRowIndex).val();
     if (jQuery.trim(strValue).length > 0) {
-        var url = '../tools/LearningGuideGenerator.html?page=' + strValue;
+        var url = '../tool/modepageaddedit.html?page=' + strValue + '&re=' + varCourse;
         window.open(url, '_blank');
     }
     else {
