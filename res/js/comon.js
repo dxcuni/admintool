@@ -17,21 +17,22 @@ function getUrlVars() {
 var varConf = getParameterByName('page');
 var varCourse = getParameterByName('re');
 var varJsPage ;
+var varURL ;
 varJsPage = getHomeURL(varCourse)+ '/res/json/'+varConf + '.js';
 var varImageURL = getHomeURL(varCourse);
 
 //get home url of the course start ///
 function getHomeURL(course) {
     if (course === 'tech') {        
-        varJsPage = homeTechLernReso ;
+        varURL = homeTechLernReso ;
     }
     else if (course === 'additi') {        
-        varJsPage = homeAddLernReso ;
+        varURL = homeAddLernReso ;
     }
     else {        
-        varJsPage = homeGuided ;
+        varURL = homeGuided ;
     }
-    return varJsPage;
+    return varURL;
 }
 
 //get home url of the course END ///
