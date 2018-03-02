@@ -386,7 +386,7 @@ function genMode2URL(urlObject) {
     var strRowIndex = urlObject.parentNode.parentNode.rowIndex;
     var strValue = $("#textBoxPage" + strRowIndex).val();
     if (jQuery.trim(strValue).length > 0) {
-        var url = '../pages/modepageaddedit.html?page=' + strValue+ '&re=' + varCourse;
+        var url = '../pages/modepageaddedit.html?page=' + strValue+ '&re=' + varCourse + '&random=' + randomWholeNum();
         window.open(url, '_blank');
     }
     else {
@@ -405,7 +405,7 @@ function genPageConfi(urlObject) {
     var strRowIndex = urlObject.parentNode.parentNode.rowIndex;
     var strValue = $("#textBoxPage" + strRowIndex).val();
     if (jQuery.trim(strValue).length > 0) {
-        var url = '../pages/modepageaddedit.html?page=' + strValue + '&re=' + varCourse;
+        var url = '../pages/LearningGuideGenerator.html?page=' + strValue + '&re=' + varCourse + '&random=' + randomWholeNum();
         window.open(url, '_blank');
     }
     else {
