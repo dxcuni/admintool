@@ -9,13 +9,13 @@
     <script src="../res/js/vars.js"></script>
     <script src="../res/js/comon.js"></script>   
      <script type="text/javascript">
-	     alert(varJsPage);
+	     
         (function () {
             // Create the request and the script
             var xhr = new XMLHttpRequest(),
                 s = document.createElement('script');
             // Send the request to retrieve custom.js
-            xhr.open('GET', varJsPage, false);
+            xhr.open('GET', varJsPage, true);
             xhr.send();
             // Listen for onload, and remove the script after execution
             s.addEventListener("load", function (e) {
