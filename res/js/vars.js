@@ -9,27 +9,6 @@ var homeAddLernReso  = "https://rawgit.com/dxcuni/addtllearnreso/itg";
 var urlAdmintool     = "https://rawgit.com/dxcuni/admintool/itg//pages/addeditdata.html";
 
 
-var varConf = getParameterByName('page');
-var varCourse = getParameterByName('re');
-var varJsPage = "";
- getHomeURL(varCourse);
-
-//get home url of the course start ///
-function getHomeURL(course) {
-    if (course === 'tech') {        
-        varJsPage = homeTechLernReso + '/res/json/'+varConf + '.js';
-    }
-    else if (course === 'additi') {        
-        varJsPage = homeAddLernReso + '/res/json/' + varConf + '.js';
-    }
-    else {        
-        varJsPage = homeGuided + '/res/json/' + varConf + '.js';
-    }
-    return varJsPage;
-}
-
-//get home url of the course END ///
-
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope) {    
