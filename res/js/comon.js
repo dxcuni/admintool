@@ -13,6 +13,25 @@ function getUrlVars() {
 
 }
 
+var varConf = getParameterByName('page');
+var varCourse = getParameterByName('re');
+var varJsPage = "";
+var URL = getHomeURL(varCourse);
+
+function getHomeURL(course) {
+    if (course === 'tech') {        
+        varJsPage = homeTechLernReso + '/res/json/'+varConf + '.js';
+    }
+    else if (course === 'additi') {        
+        varJsPage = homeAddLernReso + '/res/json/' + varConf + '.js';
+    }
+    else {        
+        varJsPage = homeGuided + '/res/json/' + varConf + '.js';
+    }
+    return varJsPage;
+}
+
+
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -61,7 +80,5 @@ function loadScript(url, callback) {
 
 //Load Dynamically JS file in page Start 
 
-
-   
 
 //Load Dynamically JS file in page Start 
