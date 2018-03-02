@@ -16,19 +16,20 @@ function getUrlVars() {
 
 var varConf = getParameterByName('page');
 var varCourse = getParameterByName('re');
-var varJsPage = "";
- getHomeURL(varCourse);
+var varJsPage ;
+varJsPage = getHomeURL(varCourse)+ '/res/json/'+varConf + '.js';
+var varImageURL = getHomeURL(varCourse);
 
 //get home url of the course start ///
 function getHomeURL(course) {
     if (course === 'tech') {        
-        varJsPage = homeTechLernReso + '/res/json/'+varConf + '.js';
+        varJsPage = homeTechLernReso ;
     }
     else if (course === 'additi') {        
-        varJsPage = homeAddLernReso + '/res/json/' + varConf + '.js';
+        varJsPage = homeAddLernReso ;
     }
     else {        
-        varJsPage = homeGuided + '/res/json/' + varConf + '.js';
+        varJsPage = homeGuided ;
     }
     return varJsPage;
 }
