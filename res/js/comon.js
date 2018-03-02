@@ -17,7 +17,7 @@ var varConf = getParameterByName('page');
 var varCourse = getParameterByName('re');
 var varJsPage = "";
 var URL = getHomeURL(varCourse);
-
+//get home url of the course start ///
 function getHomeURL(course) {
     if (course === 'tech') {        
         varJsPage = homeTechLernReso + '/res/json/'+varConf + '.js';
@@ -31,7 +31,14 @@ function getHomeURL(course) {
     return varJsPage;
 }
 
-
+//get home url of the course END ///
+//redirect the page based on buttion click start ///
+function redirect(urlRedirect) {
+    pageurl = urlAdmintool + '?re=' + urlRedirect
+    //alert(pageurl);
+    window.location = pageurl;
+}
+//redirect the page based on buttion click start ///
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
