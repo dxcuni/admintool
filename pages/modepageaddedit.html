@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Remove Data In JSON</title>
+    <link type="image/x-icon" rel="shortcut icon" href="https://dxc-itg.sabacloud.com/production/NA3T1SNB0081/public/DXC_1518638397373.ico" />
+     <script src="../res/js/comon.js"></script>
+     <script src="../res/js/jquery.min.js"></script>
+    <script src="../res/js/addremove.js"></script>               
+    <script src="../res/js/Sortable.js"></script>  
+    
+    <link rel="stylesheet" href="../res/css/TabGenerator.css">
+    <script type="text/javascript">
+    var varConf = getParameterByName('page');
+    var varJsPage = '../res/json/' + varConf + '.js';    
+	(function () {
+            // Create the request and the script
+            var xhr = new XMLHttpRequest(),
+                s = document.createElement('script');
+            // Send the request to retrieve custom.js
+            xhr.open('GET', varJsPage, false);
+            xhr.send();
+            // Listen for onload, and remove the script after execution
+            s.addEventListener("load", function (e) {
+                s.parentElement.removeChild(s);
+            });
+            // Load the code inside the script and run it in the head
+            s.textContent = xhr.responseText;
+            document.head.appendChild(s);
+        })();
+</script>
+</head>
+
+<body onload="createTable()">
+    <div style="position: relative; top: 0px; left: 0px; padding-left: 0; background-color: #000000;">
+        <div style="position: relative; top: 10px; left: 0px; padding-left: 20; background-color: #000000">
+            <img src="../res/images/dxc_logo.jpg">
+        </div>
+        <div style="position: absolute; top: 0px; left: 100px; padding-left: 0; background-color: #000000;">
+            <h2 style="color: white;">
+                DXC University
+            </h2>
+        </div>
+    </div>
+    <div class="groupbox" >
+        <div class="groupbox2" >
+            <div style="width:50%;margin: auto;">
+
+            <p>
+                <input type="button" id="addRow" value="Add New Row" onclick="addRow()" class="inputbutton1" /><br />
+                 <b style="padding-left:190px;color:red;">You are managaing  <label id="message"></label> mode 2 page.</b>
+            </p>
+            <!--THE CONTAINER WHERE WE'll ADD THE DYNAMIC TABLE-->
+            <div id="cont"></div>
+            <p>
+             <input type="button" id="bt" value="Generate Configuration File" onclick="sumbit()" class="inputbutton1" /><br />
+              &nbsp;&nbsp;&nbsp; <b style="font-size:13px"> Note:Once you download the conf.js file, upload in github under ~/learning_guide/res/json repository.</b>
+            </p>
+            </div>
+        </div>
+    </div>
+    <script>        
+        document.getElementById('message').innerHTML = varConf;
+    </script>
+</body>
