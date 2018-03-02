@@ -39,7 +39,7 @@ function getHomeURL(course) {
 
 //redirect the page based on buttion click start ///
 function redirect(urlRedirect) {
-    pageurl = urlAdmintool + '?re=' + urlRedirect
+    pageurl = urlAdmintool + '?re=' + urlRedirect + '&random=' + randomWholeNum();
     //alert(pageurl);
     window.location = pageurl;
 }
@@ -89,7 +89,12 @@ function loadScript(url, callback) {
                 document.getElementsByTagName("head")[0].appendChild(fileref)
         }
 //Load Dynamically JS file in page END
-
+//Genrete Random number start 
+        function randomWholeNum() {
+            // Only change code below this line.
+            return Math.random();
+        }
+//Genrete Random number start 
 //Load Dynamically JS file in page Start 
 
 
