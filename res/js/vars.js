@@ -13,7 +13,7 @@ var varConf = getParameterByName('page');
 var varCourse = getParameterByName('re');
 var varJsPage = "";
 varJsPage = getHomeURL(varCourse);
-alert(varJsPage);
+
 //get home url of the course start ///
 function getHomeURL(course) {
     if (course === 'tech') {        
