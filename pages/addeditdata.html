@@ -16,7 +16,7 @@
             var xhr = new XMLHttpRequest(),
                 s = document.createElement('script');
             // Send the request to retrieve custom.js
-            xhr.open('GET', varJsPage, true);
+            xhr.open('GET', varJsPage, false);
             xhr.send();
             // Listen for onload, and remove the script after execution
             s.addEventListener("load", function (e) {
