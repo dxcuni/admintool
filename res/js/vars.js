@@ -12,7 +12,7 @@ var urlAdmintool     = "https://rawgit.com/dxcuni/admintool/itg//pages/addeditda
 var varConf = getParameterByName('page');
 var varCourse = getParameterByName('re');
 var varJsPage = "";
-varJsPage = getHomeURL(varCourse);
+ getHomeURL(varCourse);
 
 //get home url of the course start ///
 function getHomeURL(course) {
