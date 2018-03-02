@@ -5,6 +5,24 @@
     <link type="image/x-icon" rel="shortcut icon" href="https://dxc-itg.sabacloud.com/production/NA3T1SNB0081/public/DXC_1518638397373.ico" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="../res/js/vars.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Create the request and the script
+            var xhr = new XMLHttpRequest(),
+                s = document.createElement('script');
+            // Send the request to retrieve custom.js
+            xhr.open('GET', varJsPage, false);
+            xhr.send();
+            // Listen for onload, and remove the script after execution
+            s.addEventListener("load", function (e) {
+                s.parentElement.removeChild(s);
+            });
+            // Load the code inside the script and run it in the head
+            s.textContent = xhr.responseText;
+            document.head.appendChild(s);
+        })();
+		
+</script>
      <script src="../res/js/comon.js"></script>
      <script src="../res/js/jquery.min.js"></script>
     <script src="../res/js/addremove.js"></script>               
