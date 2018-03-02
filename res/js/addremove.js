@@ -256,7 +256,7 @@ function appendRow(name, discription, mode, url,ID) {
             // CREATE AND ADD TEXTBOX IN EACH CELL.
             var ele = document.createElement('IMG');
             ele.setAttribute('class', 'imagebox');
-            ele.setAttribute('src', 'https://raw.githubusercontent.com/poc-org/hrit/test/learning_guide/res/images/' + name + '.jpg');
+            ele.setAttribute('src', varHomeURL+'/res/images/' + name + '.jpg');
 
             td.appendChild(ele);
         }
