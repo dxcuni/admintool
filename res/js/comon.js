@@ -13,26 +13,7 @@ function getUrlVars() {
 
 }
 
-var varConf = getParameterByName('page');
-var varCourse = getParameterByName('re');
-var varJsPage = "";
- varJsPage = getHomeURL(varCourse);
-alert(varJsPage);
-//get home url of the course start ///
-function getHomeURL(course) {
-    if (course === 'tech') {        
-        varJsPage = homeTechLernReso + '/res/json/'+varConf + '.js';
-    }
-    else if (course === 'additi') {        
-        varJsPage = homeAddLernReso + '/res/json/' + varConf + '.js';
-    }
-    else {        
-        varJsPage = homeGuided + '/res/json/' + varConf + '.js';
-    }
-    return varJsPage;
-}
 
-//get home url of the course END ///
 //redirect the page based on buttion click start ///
 function redirect(urlRedirect) {
     pageurl = urlAdmintool + '?re=' + urlRedirect
