@@ -6,6 +6,7 @@
 var homeGuided       = "https://rawgit.com/dxcuni/guidedlearn/itg/";
 var homeTechLernReso = "https://rawgit.com/dxcuni/techlearnreso/itg/";
 var homeAddLernReso  = "https://rawgit.com/dxcuni/addtllearnreso/itg/";
+var urlAdmintool     = "https://rawgit.com/dxcuni/admintool/itg//pages/addeditdata.html";
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function ($scope) {    
