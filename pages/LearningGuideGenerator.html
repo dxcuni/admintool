@@ -99,7 +99,7 @@
             
     </script>
 </head>
-<body>
+    <body>
     <div style="position: relative; top: 0px; left: 0px; padding-left: 0; background-color: #000000;">
         <div style="position: relative; top: 10px; left: 0px; padding-left: 20; background-color: #000000">
             <img src="../res/images/dxc_logo.jpg">
@@ -117,26 +117,30 @@
             <br />
             <table width="40%" align="center" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td colspan="3">
+                    <td colspan="0">
                         <!-- <a href="javascript:void(0);" onclick="addElement();">Add Tab Name</a> -->
                         <input type="button" value="Add Tab Name" onclick="addElement();" class="inputbuttonTab"  />
-                        &nbsp;&nbsp;
+                    </td>
+                    <td>
                         <!-- <a href="javascript:void(0);" onclick="removeElement();">Remove Tab Name</a>-->
                         <input type="button" value="Remove Tab Name" onclick="removeElement();" class="inputbuttonTab" />
-                        <br />
-                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        
                         <b>Tab names: </b>
                         <br />
-                        <div id="content">
+                        <div id="content" >
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td height="30">
+                    <td height="30" colspan="2">
                     </td>
                 </tr>
                 <tr>
-                    <td align="left">
+                    <td align="left" colspan="2">
                         <!-- <button onclick="generatefile()">-->
                         <input type="button" value="Generate File" onclick="generatefile()" class="inputbuttonTab"  />
                         <br>
@@ -151,3 +155,4 @@
     </div>
 </body>
 </html>
+
