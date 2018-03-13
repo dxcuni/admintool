@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dynamically Add Remove Data In JSON</title>
+    <link type="image/x-icon" rel="shortcut icon" href="https://dxc-itg.sabacloud.com/production/NA3T1SNB0081/public/DXC_1518638397373.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../res/ckeditor/ckeditor.js"></script>
+    <script src="../res/js/vars.js"></script>
+    <script src="../res/js/comon.js"></script>
+    <link rel="stylesheet" href="../res/css/TabGenerator.css">
+		
+	
+        <script type="text/javascript">
+            $(function () {
+
+                $("#btPrivew").click(function () {
+                    
+                    //var jobValue = document.getElementById('editeur').value
+                    //var jobValue = $("[id*=editeur]").val();
+                    //var jobValue = $('textarea#editeur').val();
+                    var varTextboxValue = (CKEDITOR.instances.editeur1.getData());
+                    // alert(jobValue+' Test');
+                    $("#privewTextBox").html(varTextboxValue);
+                });
+
+
+                $("#btCreatTab").click(function () {
+                    
+                    //var jobValue = document.getElementById('editeur').value
+                    //var jobValue = $("[id*=editeur]").val();
+                    //var jobValue = $('textarea#editeur').val();
+                    var varTextboxValue = (CKEDITOR.instances.editeur1.getData());
+                    var textToSaveAsBlob = new Blob([varTextboxValue], { type: "text/html" });
+                    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+                    var fileNameToSaveAs = varConf + '.html';
+                    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                        window.navigator.msSaveOrOpenBlob(textToSaveAsBlob, fileNameToSaveAs);
+                    } else {
+
+                        var downloadLink = document.createElement("a");
+                        downloadLink.download = fileNameToSaveAs;
+                        downloadLink.innerHTML = "Download File";
+                        downloadLink.href = textToSaveAsURL;
+                        downloadLink.onclick = destroyClickedElement;
+                        downloadLink.style.display = "none";
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        // downloadLink.onclick();
+                    }
+
+                    
+                });
+
+
+                function destroyClickedElement(event) {
+                    document.body.removeChild(event.target);
+                }
+
+
+            });
+
+
+
+            
+
+
+    </script>
+	
+    
+</head>
+        
+<body>
+    <div style="position: relative; top: 0px; left: 0px; padding-left: 0; background-color: #000000;">
+        <div style="position: relative; top: 10px; left: 0px; padding-left: 20; background-color: #000000">
+            <img src="../res/images/dxc_logo.jpg">
+        </div>
+        <div style="position: absolute; top: 0px; left: 100px; padding-left: 0; background-color: #000000;">
+            <h2 style="color: white;">
+                DXC University
+            </h2>
+        </div>
+    </div>
+
+    <div class="groupbox" >
+        <div class="groupbox2" > 
+
+            <table>
+                <tr>
+                    <td colspan="2" style="text-align:center"> 
+                        <b style="text-align:center; color:red;">Creating The Tab  <label id="message"></label> page.</b><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:50%; height:300px;">
+                        <textarea class="ckeditor" name="editeur1" id="editeur1" rows="80" cols="900"></textarea>
+                    </td>
+                    <td style="width:50%">
+                        <div id="privewTextBox" style="border:dashed; width: 800px;height:300px; overflow:scroll;">Preview Html Page....</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" id="btPrivew" value="Priview"  class="inputbutton1" />
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center; padding-right:300px;" >
+                        <input type="button" id="btCreatTab" value="Generate Tab File"  class="inputbutton1" />
+
+                    </td>
+                </tr>
+
+            </table>
+
+                
+        </div>
+            
+    </div>
+    <script>
+        document.getElementById('message').innerHTML = varConf;
+        </script>
+</body>
+</html>
