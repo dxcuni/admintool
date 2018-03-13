@@ -69,6 +69,23 @@ body
     margin-left:200px;
 }
 
+.TabFile
+{
+  cursor: pointer;
+  background:none;
+  color:white;
+  border:none;
+  width:auto;
+  height:23px;
+  border-radius:3px;
+  background-color:Black;
+  font-size:16px;
+  
+  
+  
+}
+
+
 .inputbuttonconf
 {
     cursor: pointer;
@@ -95,7 +112,7 @@ a.inputbuttonconf {
     
 }
 
-.inputbutton1:hover,.inputbuttonconf:hover {
+.inputbutton1:hover,.inputbuttonconf:hover,.TabFile.hover {
     background: #F39C12;
     color: #fff;
 }
