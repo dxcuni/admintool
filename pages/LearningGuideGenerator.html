@@ -3,6 +3,8 @@
 <head>
     <title>Add Content Page</title>
     <link type="image/x-icon" rel="shortcut icon" href="https://dxc-itg.sabacloud.com/production/NA3T1SNB0081/public/DXC_1518638397373.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../res/css/TabGenerator.css">
     <script src="../res/js/comon.js"></script>
     
@@ -15,7 +17,7 @@
             intTextBox++;
             var objNewDiv = document.createElement('div');
             objNewDiv.setAttribute('id', 'div_' + intTextBox);
-            objNewDiv.innerHTML = 'Tab name ' + intTextBox + ': &nbsp;&nbsp; <input type="text" id="tb_' + intTextBox + '" name="tb_' + intTextBox + '"/>';
+             objNewDiv.innerHTML = 'Tab name ' + intTextBox + ': &nbsp;&nbsp; <input type="text" id="tb_' + intTextBox + '"style="margin-left:inherit" name="tb_' + intTextBox + '"/> &nbsp;<input type="button" id=' + intTextBox + ' value="Generate TabFile" onclick="genRichTextBoxURL(this.id)" class="TabFile"  />';
             document.getElementById('content').appendChild(objNewDiv);
         }
 
@@ -95,7 +97,24 @@
             document.body.removeChild(event.target);
         } 
       
+ 
+        function genRichTextBoxURL(urlObject) {
+            
+            var strRowIndex = urlObject;
 
+            //var strRowIndex = urlObject.parentNode.rowIndex;            
+            var strValue = $("#tb_" + strRowIndex).val();
+            if (jQuery.trim(strValue).length > 0) {
+                var url = '../tool/richtextbox.html?page=' + strValue + '&random=' + randomWholeNum();
+                window.open(url, '_blank');
+            }
+            else {
+                alert("Please provide the tab name first");
+
+            }
+
+        }
+            
             
     </script>
 </head>
@@ -115,13 +134,13 @@
             <div class="groupbox3">
             
             <br />
-            <table width="40%" align="center" border="0" cellpadding="0" cellspacing="0">
+            <table width="50%" align="center" border="0" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td colspan="0">
+                    <td width="40%">
                         <!-- <a href="javascript:void(0);" onclick="addElement();">Add Tab Name</a> -->
                         <input type="button" value="Add Tab Name" onclick="addElement();" class="inputbuttonTab"  />
                     </td>
-                    <td>
+                    <td width="60%">
                         <!-- <a href="javascript:void(0);" onclick="removeElement();">Remove Tab Name</a>-->
                         <input type="button" value="Remove Tab Name" onclick="removeElement();" class="inputbuttonTab" />
                     </td>
