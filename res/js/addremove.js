@@ -136,7 +136,7 @@ function addRow() {
             // SET INPUT ATTRIBUTE.
             button.setAttribute('id', 'butURLConfig' + rowCnt);
             button.setAttribute('type', 'button');
-            button.setAttribute('value', 'Configur');
+            button.setAttribute('value', 'Configure');
             button.setAttribute('class', 'inputbutton2');
             button.setAttribute("hidden", true);
             // ADD THE BUTTON's 'onclick' EVENT.
@@ -316,7 +316,7 @@ function appendRow(name, discription, mode, url,ID) {
             // SET INPUT ATTRIBUTE.
             button.setAttribute('id', 'butURLConfig'+ ID);
             button.setAttribute('type', 'button');
-            button.setAttribute('value', 'Configur');
+            button.setAttribute('value', 'Configure');
             button.setAttribute('class', 'inputbutton2');
 
             if ((mode == 1) || (mode == 3)) {
