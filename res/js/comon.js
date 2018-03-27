@@ -23,10 +23,10 @@ var varImageURL = getHomeURL(varCourse);
 
 //get home url of the course start ///
 function getHomeURL(course) {
-    if (course === 'tech') {        
+    if (course === 'techlearnreso') {        
         varURL = homeTechLernReso ;
     }
-    else if (course === 'additi') {        
+    else if (course === 'addtllearnreso') {        
         varURL = homeAddLernReso ;
     }
     else {        
