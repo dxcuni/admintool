@@ -105,7 +105,9 @@
             //var strRowIndex = urlObject.parentNode.rowIndex;            
             var strValue = $("#tb_" + strRowIndex).val();
             if (jQuery.trim(strValue).length > 0) {
-                var url = 'richtextbox.html?page=' + strValue + '&random=' + randomWholeNum();
+                //var url = 'richtextbox.html?page=' + strValue + '&random=' + randomWholeNum();
+                var url = 'richtextbox.html?page=tab' + urlObject + '&random=' + randomWholeNum();
+                
                 window.open(url, '_blank');
             }
             else {
